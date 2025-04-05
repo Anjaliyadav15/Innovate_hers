@@ -1,9 +1,18 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookOpen, Brain, Calendar, Clock, Compass, Gift, Lightbulb, MapPin, Utensils } from "lucide-react"
+import Scholarship from "./page/Scholarship"
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 export default function LandingPage() {
   return (
+    <>
+     <BrowserRouter>
+      <Routes>
+       
+        <Route path="/scholarship" element={<Scholarship />} />
+      </Routes>
+    </BrowserRouter>
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
         <div className="container flex h-16 items-center justify-between py-4">
@@ -478,6 +487,7 @@ export default function LandingPage() {
         </div>
       </footer>
     </div>
+    </>
   )
 }
 
