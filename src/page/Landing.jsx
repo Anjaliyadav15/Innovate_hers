@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookOpen, Brain, Calendar, Clock, Compass, Gift, Lightbulb, MapPin, Utensils } from "lucide-react"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function Landing() {
+  const router = useNavigate()
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
@@ -88,7 +90,7 @@ export default function Landing() {
                     AI that predicts food demand, suggests healthy meals, and reduces food waste. Get personalized meal
                     recommendations based on your preferences.
                   </CardDescription>
-                  <Button variant="outline" className="w-full text-white">
+                  <Button onClick={router("/")} variant="outline" className="w-full text-white">
                     Learn More
                   </Button>
                 </CardContent>
@@ -105,7 +107,7 @@ export default function Landing() {
                     A connected platform to track and report lost items quickly and easily. Get notifications when your
                     items are found and connect with the campus community.
                   </CardDescription>
-                  <Button variant="outline" className="w-full text-white">
+                  <Button onClick={() => router("/lost-and-found")} variant="outline" className="w-full text-white">
                     Learn More
                   </Button>
                 </CardContent>
@@ -122,7 +124,7 @@ export default function Landing() {
                     Find the best scholarships that match your profile and deadlines with one click. Never miss an
                     opportunity with personalized alerts and application tracking.
                   </CardDescription>
-                  <Button variant="outline" className="w-full text-white">
+                  <Button onClick={() => router("/scholarship")} variant="outline" className="w-full text-white">
                     Learn More
                   </Button>
                 </CardContent>
